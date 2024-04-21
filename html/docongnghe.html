@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAPTOPWORLD</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/checkthongtin.js"></script>
+    <script src="../js/pageNumber2.js"></script>
+    
+    <link rel="stylesheet" href="../css/page.css">
+
+</head>
+
+<body>
+    <div class="container bg-light">
+        <header>
+            <div id="message" class="hidden"></div>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <a href="../index.html" class="nav-link me-4">
+                        <h2 class="fw-bold">LAPTOPWORLD</h2>
+                    </a>
+                    <button class="btn btn-outline-light me-4" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <form class="d-flex me-4 w-50">
+                            <input class="form-control rounded-end-0" type="search" placeholder="Search"
+                                aria-label="Search">
+                            <button class="btn btn-light rounded-start-0" type="submit">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </form>
+                        <ul class="navbar-nav">
+                            <li class="nav-item me-5">
+                                <button type="button" class="button-news">
+                                    <a href="https://www.cnet.com/2/" class="nav-link fw-bold text-white">Tin Tức</a>
+                                </button>
+                            </li>
+                            <li class="nav-item me-5">
+                                <button type="button" class="button-cart">
+                                    <a href="giohang.html" class="nav-link fw-bold text-white"> Giỏ Hàng <i
+                                            class="bi bi-cart3"></i></a>
+                                </button>
+                            </li>
+                            <li class="nav-item">
+                                <button type="button" class="button-login">
+                                    <a href="#" class="nav-link fw-bold" data-bs-toggle="modal"
+                                        data-bs-target="#loginModal">
+                                        Đăng Nhập <i class="bi bi-box-arrow-in-right"></i></a>
+                                </button>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Login Modal -->
+                <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="loginModalLabel">Đăng nhập</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Login Form -->
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="loginUsername" class="form-label">Tên đăng nhập</label>
+                                        <input type="text" class="form-control" id="loginUsername" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="loginPassword" class="form-label">Mật khẩu</label>
+                                        <input type="password" class="form-control" id="loginPassword" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <a href="#">Quên mật khẩu?</a>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Đăng nhập</button>
+                                </form>
+                                <hr>
+                                <div class="mb-3">
+                                    <button type="button" class="btn btn-primary" style="width: 49%;">Đăng nhập bằng
+                                        Facebook</button>
+                                    <button type="button" class="btn btn-danger" style="width: 49%;">Đăng nhập bằng
+                                        Google</button>
+                                </div>
+                                <p>Nếu bạn chưa có tài khoản, hãy <a href="#" data-bs-dismiss="modal"
+                                        data-bs-toggle="modal" data-bs-target="#registerModal">đăng ký</a>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Register Modal -->
+                <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="registerModalLabel">Đăng ký</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Register Form -->
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="registerUsername" class="form-label">Họ tên</label>
+                                        <input type="text" class="form-control" id="registerFirstName" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="registerMail" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="registerMail" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="registerPhone" class="form-label">Số điện thoại</label>
+                                        <input type="tel" class="form-control" id="registerPhone" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="registerUsername" class="form-label">Tên đăng nhập</label>
+                                        <input type="text" class="form-control" id="registerUsername" required>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="registerPassword" class="form-label">Mật khẩu</label>
+                                        <input type="password" class="form-control" id="registerPassword" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="registerrePassword" class="form-label">Xác nhận mật khẩu</label>
+                                        <input type="password" class="form-control" id="registerrePassword" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="agreeCheck"
+                                                id="agreeCheck" value="option1" required>
+                                            <label class="form-check-label" for="exampleRadios1">
+                                                Tôi đã đọc và chấp nhận Điều khoản và Chính sách bảo mật
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Đăng ký</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div class="offcanvas offcanvas-start w-25" data-bs-scroll="true" tabindex="-1"
+                id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                <div class="offcanvas-header">
+                    <h3 class="offcanvas-title fw-bold" id="offcanvasWithBothOptionsLabel">
+                        <a href="index.html" class="nav-link">LAPTOPWORLD</a>
+                    </h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <form class="d-flex me-5 mb-2 w-auto">
+                        <input class="form-control rounded-end-0" type="search" placeholder="Search"
+                            aria-label="Search">
+                        <button class="btn btn-light rounded-start-0" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </form>
+                    <ul class="navbar-nav">
+                        <li class="nav-item"> 
+                            <button type="button" class="button-news">
+                                <a href="https://www.cnet.com/2/" class="nav-link fw-bold text-white">Tin Tức</a>
+                            </button>
+                        </li>
+                        <li class="nav-item mt-2">
+                            <button type="button" class="button-cart">
+                                <a href="giohang.html" class="nav-link fw-bold text-white"> Giỏ Hàng <i class="bi bi-cart3"></i></a>
+                            </button>
+                        </li>
+                        <li class="nav-item mt-2">
+                            <button type="button" class="button-login">
+                                <a href="#" class="nav-link fw-bold" data-bs-toggle="modal"
+                                data-bs-target="#loginModal">
+                                Đăng Nhập <i class="bi bi-box-arrow-in-right"></i></a>
+                            </button>
+                            
+                        </li>
+                    </ul>
+                    <div class="row justify-content-center mt-5">
+                        <div class="col-2">
+                            <a href="https://www.facebook.com/atnuanh.76" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Follow on Facebook">
+                                <i class="bi bi-facebook fs-4"></i>
+                            </a>
+                        </div>
+                        <div class="col-2">
+                            <a href="https://youtube.com/@atnuanh_76" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Subscribe on YouTube">
+                                <i class="bi bi-youtube fs-4"></i>
+                            </a>
+                        </div>
+                        <div class="col-2">
+                            <a href="mailto:1tuananhtran1@gmail.com" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Send an Email">
+                                <i class="bi bi-envelope-at fs-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <p class="text-danger"><i class="bi bi-c-circle"></i> Copyright belongs to group 14</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+        <section>
+            <hr style="border: 2px solid black;">
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="../img/banner (1).jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../img/banner1.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../img/banner3.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <hr style="border: 2px solid black;">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h3 class="fw-bold">LỰA CHỌN CỦA BẠN?</h3>
+                </div>
+            </div>
+            <hr style="border: 2px solid black;">
+            <div class="row mb-3">
+                <div class="col-2">
+                    <button type="button" class="fw-bold  p-0 m-auto border-0 custom-card-1 w-100">
+                        <a href="laptop.html">
+                            <img src="../img/LAPTOP.png" alt="" class="w-100 rounded-2">
+                        </a>
+                    </button>
+                </div>
+                <div class="col-2">
+                    <button type="button" class="fw-bold border-0 p-0 custom-card-1 w-100">
+                        <a href="minipc.html">
+                            <img src="../img/MINIPC.png" alt="" class="w-100 rounded-2">
+                        </a>
+                    </button>
+                </div>
+                <div class="col-2">
+                    <button type="button" class="fw-bold border-0 p-0 custom-card-1 w-100">
+                        <a href="linhkien.html">
+                            <img src="../img/linhkien.png" alt="" class="w-100 rounded-2">
+                        </a>
+                    </button>
+                </div>
+                <div class="col-2">
+                    <button type="button" class="fw-bold border-0 p-0 custom-card-1 w-100">
+                        <a href="docongnghe.html">
+                            <img src="../img/dôcngnghe.png" alt="" class="w-100 rounded-2">
+                        </a>
+                    </button>
+                </div>
+                <div class="col-2">
+                    <button type="button" class="fw-bold border-0 p-0 custom-card-1 w-100">
+                        <a href="suachua.html">
+                            <img src="../img/Suachua.png" alt="" class="w-100 rounded-2">
+                        </a>
+                    </button>
+                </div>
+                <div class="col-2">
+                    <button type="button" class="fw-bold border-0 p-0 custom-card-1 w-100">
+                        <a href="baohanh.html">
+                            <img src="../img/baohanh.png" alt="" class="w-100 rounded-2">
+                        </a>
+                    </button>
+                </div>
+            </div>
+            <hr style="border: 2px solid black;">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h3 class="fw-bold">ĐỒ CÔNG NGHỆ</h3>
+                </div>
+            </div>
+            <hr style="border: 2px solid black;">
+            <div class="page" id="page1">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card custom-card">
+                            <div class="card-body">
+                                <img src="../img/tainghe 1.webp" alt="" width="100%" height="auto">
+                                <h5>Tai nghe gaming chụp tai có mic ProOne PWH3510</h5>
+                                <p style="color: red; font-size:large">
+                                    <b>449.000VNĐ</b>
+                                </p>
+                                <div class="button-container">
+                                    <button type="button" class="btn btn-primary">Đặt hàng</button>
+                                    <button type="button" class="btn btn-light addToCart"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="16" height="16" fill="currentColor" class="bi bi-cart-plus"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z" />
+                                            <path
+                                                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                        </svg></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card custom-card">
+                            <div class="card-body">
+                                <img src="../img/tainghe2.webp" alt="" width="100%" height="auto">
+                                <h5>Tai nghe gaming Rapoo VH520C có mic</h5>
+                                <p style="color: red; font-size:large">
+                                    <b>479.000VNĐ</b>
+                                </p>
+                                <div class="button-container">
+                                    <button type="button" class="btn btn-primary">Đặt hàng</button>
+                                    <button type="button" class="btn btn-light addToCart"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="16" height="16" fill="currentColor" class="bi bi-cart-plus"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z" />
+                                            <path
+                                                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                        </svg></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card custom-card">
+                            <div class="card-body">
+                                <img src="../img/tainghe3.jpg" alt="" width="100%" height="auto">
+                                <h5>Tai nghe gaming Rapoo VH160 có mic</h5>
+                                <p style="color: red; font-size:large">
+                                    <b>390.000VNĐ</b>
+                                </p>
+                                <div class="button-container">
+                                    <button type="button" class="btn btn-primary">Đặt hàng</button>
+                                    <button type="button" class="btn btn-light addToCart"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="16" height="16" fill="currentColor" class="bi bi-cart-plus"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z" />
+                                            <path
+                                                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                        </svg></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card custom-card">
+                            <div class="card-body">
+                                <img src="../img/tainghe3.jpg" alt="" width="100%" height="auto">
+                                <h5>Tai nghe gaming Rapoo VH160 có mic</h5>
+                                <p style="color: red; font-size:large">
+                                    <b>390.000VNĐ</b>
+                                </p>
+                                <div class="button-container">
+                                    <button type="button" class="btn btn-primary">Đặt hàng</button>
+                                    <button type="button" class="btn btn-light addToCart"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="16" height="16" fill="currentColor" class="bi bi-cart-plus"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z" />
+                                            <path
+                                                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                        </svg></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card custom-card">
+                            <div class="card-body">
+                                <img src="../img/banphim1.webp" alt="" width="100%" height="auto">
+                                <h5>Bàn phím Leopold FC660M Bluetooth Coral Blue Limited Edition Blue Switch</h5>
+                                <p style="color: red; font-size:large">
+                                    <b>3.250.000VNĐ</b>
+                                </p>
+                                <div class="button-container">
+                                    <button type="button" class="btn btn-primary">Đặt hàng</button>
+                                    <button type="button" class="btn btn-light addToCart"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="16" height="16" fill="currentColor" class="bi bi-cart-plus"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z" />
+                                            <path
+                                                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                        </svg></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card custom-card">
+                            <div class="card-body">
+                                <img src="../img/banphim2.webp" alt="" width="100%" height="auto">
+                                <h5>Bàn phím cơ AKKO 3108 RF One Piece Luffy Akko V3 Cream Blue switch</h5>
+                                <p style="color: red; font-size:large">
+                                    <b>1.889.000VNĐ</b>
+                                </p>
+                                <div class="button-container">
+                                    <button type="button" class="btn btn-primary">Đặt hàng</button>
+                                    <button type="button" class="btn btn-light addToCart"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="16" height="16" fill="currentColor" class="bi bi-cart-plus"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z" />
+                                            <path
+                                                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                        </svg></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card custom-card">
+                            <div class="card-body">
+                                <img src="../img/banphim3.webp" alt="" width="100%" height="auto">
+                                <h5>Bàn phím cơ Fuhlen H75S SAO LA 3 Mode Wireless Fuhlen Brown Pro switch</h5>
+                                <p style="color: red; font-size:large">
+                                    <b>2.590.000VNĐ</b>
+                                </p>
+                                <div class="button-container">
+                                    <button type="button" class="btn btn-primary">Đặt hàng</button>
+                                    <button type="button" class="btn btn-light addToCart"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="16" height="16" fill="currentColor" class="bi bi-cart-plus"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z" />
+                                            <path
+                                                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                        </svg></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card custom-card">
+                            <div class="card-body">
+                                <img src="../img/banphim4.webp" alt="" width="100%" height="auto">
+                                <h5>Bàn phím Cooler Master CK570 SF6 Chun Li dây với cáp Type-C </h5>
+                                <p style="color: red; font-size:large">
+                                    <b>2.420.000VNĐ</b>
+                                </p>
+                                <div class="button-container">
+                                    <button type="button" class="btn btn-primary">Đặt hàng</button>
+                                    <button type="button" class="btn btn-light addToCart"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="16" height="16" fill="currentColor" class="bi bi-cart-plus"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z" />
+                                            <path
+                                                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                        </svg></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page" id="page2">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="card custom-card">
+                            <div class="card-body">
+                                <img src="../img/chuot1.webp" alt="" width="100%" height="auto">
+                                <h5>Chuột gaming Rapoo VT200 Wireless</h5>
+                                <p style="color: red; font-size:large">
+                                    <b>690.000VNĐ</b>
+                                </p>
+                                <div class="button-container">
+                                    <button type="button" class="btn btn-primary">Đặt hàng</button>
+                                    <button type="button" class="btn btn-light addToCart"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="16" height="16" fill="currentColor" class="bi bi-cart-plus"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z" />
+                                            <path
+                                                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                        </svg></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card custom-card">
+                            <div class="card-body">
+                                <img src="../img/chuot1.webp" alt="" width="100%" height="auto">
+                                <h5>Chuột Logitech G102 LightSync White</h5>
+                                <p style="color: red; font-size:large">
+                                    <b>420.000VNĐ</b>
+                                </p>
+                                <div class="button-container">
+                                    <button type="button" class="btn btn-primary">Đặt hàng</button>
+                                    <button type="button" class="btn btn-light addToCart"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="16" height="16" fill="currentColor" class="bi bi-cart-plus"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z" />
+                                            <path
+                                                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                        </svg></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card custom-card">
+                            <div class="card-body">
+                                <img src="../img/chuot3.webp" alt="" width="100%" height="auto">
+                                <h5>Chuột Logitech G502 Hero Gaming</h5>
+                                <p style="color: red; font-size:large">
+                                    <b>950.000VNĐ</b>
+                                </p>
+                                <div class="button-container">
+                                    <button type="button" class="btn btn-primary">Đặt hàng</button>
+                                    <button type="button" class="btn btn-light addToCart"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="16" height="16" fill="currentColor" class="bi bi-cart-plus"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z" />
+                                            <path
+                                                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                        </svg></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card custom-card">
+                            <div class="card-body">
+                                <img src="../img/chuot4.webp" alt="" width="100%" height="auto">
+                                <h5>Chuột DareU EM901X RGB Superlight Wireless Pink</h5>
+                                <p style="color: red; font-size:large">
+                                    <b>690.000VNĐ</b>
+                                </p>
+                                <div class="button-container">
+                                    <button type="button" class="btn btn-primary">Đặt hàng</button>
+                                    <button type="button" class="btn btn-light addToCart"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="16" height="16" fill="currentColor" class="bi bi-cart-plus"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z" />
+                                            <path
+                                                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                        </svg></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card custom-card">
+                            <div class="card-body">
+                                <img src="../img/loa1.webp" alt="" width="100%" height="auto">
+                                <h5>Loa Bluetooth kiêm đồng hồ báo thức Radio Havit M3</h5>
+                                <p style="color: red; font-size:large">
+                                    <b>299.000VNĐ</b>
+                                </p>
+                                <div class="button-container">
+                                    <button type="button" class="btn btn-primary">Đặt hàng</button>
+                                    <button type="button" class="btn btn-light addToCart"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="16" height="16" fill="currentColor" class="bi bi-cart-plus"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z" />
+                                            <path
+                                                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                        </svg></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card custom-card">
+                            <div class="card-body">
+                                <img src="../img/loa2.jpg" alt="" width="100%" height="auto">
+                                <h5>Loa Bluetooth Thonet & Vander Frei Black</h5>
+                                <p style="color: red; font-size:large">
+                                    <b>730.000VNĐ</b>
+                                </p>
+                                <div class="button-container">
+                                    <button type="button" class="btn btn-primary">Đặt hàng</button>
+                                    <button type="button" class="btn btn-light addToCart"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="16" height="16" fill="currentColor" class="bi bi-cart-plus"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z" />
+                                            <path
+                                                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                        </svg></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card custom-card">
+                            <div class="card-body">
+                                <img src="../img/loa3.jpg" alt="" width="100%" height="auto">
+                                <h5>Loa Bluetooth Thonet & Vander Frei Red</h5>
+                                <p style="color: red; font-size:large">
+                                    <b>730.000VNĐ</b>
+                                </p>
+                                <div class="button-container">
+                                    <button type="button" class="btn btn-primary">Đặt hàng</button>
+                                    <button type="button" class="btn btn-light addToCart"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="16" height="16" fill="currentColor" class="bi bi-cart-plus"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z" />
+                                            <path
+                                                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                        </svg></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card custom-card">
+                            <div class="card-body">
+                                <img src="../img/loa4.webp" alt="" width="100%" height="auto">
+                                <h5>Loa không dây Thonet & Vander LAUT BT</h5>
+                                <p style="color: red; font-size:large">
+                                    <b>2.950.000VNĐ</b>
+                                </p>
+                                <div class="button-container">
+                                    <button type="button" class="btn btn-primary">Đặt hàng</button>
+                                    <button type="button" class="btn btn-light addToCart"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="16" height="16" fill="currentColor" class="bi bi-cart-plus"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z" />
+                                            <path
+                                                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                        </svg></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="d-flex justify-content-center mt-4">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item" id="prevPage">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#" onclick="showPage(1)">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#" onclick="showPage(2)">2</a></li>
+                        <li class="page-item" id="nextPage">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+        <hr style="border: 2px solid black;">
+    </div>
+    <footer class="bg-dark text-white p-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>VĂN PHÒNG GIAO DỊCH</h5>
+                    <ul class="list-menu ps-3">
+                        <li class="li_menu">
+
+                            <address>
+                                Địa chỉ: 12 Nguyễn Văn Bảo, Phường 4, Quận Gò Vấp, TP.Hồ Chí Minh
+                            </address>
+
+                        </li>
+                        <li class="li_menu">
+                            Thời gian làm việc: <br>
+                            - Từ thứ 2 đến chủ nhật: 0h-24h
+                            <br>
+                            không có ngày nghỉ
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>VỀ CHÚNG TÔI</h5>
+
+                    <p style="text-align: justify;">Chào mừng bạn đến với LaptopWorld - Nơi bạn tìm thấy sự kết hợp hoàn
+                        hảo giữa công nghệ và
+                        phong cách!</p>
+                    <p style="text-align: justify;">Sứ mệnh của chúng tôi là mang đến cho bạn những sản phẩm và
+                        dịch vụ tốt nhất, đáp ứng
+                        mọi nhu cầu về công nghệ thông tin của bạn và nâng cao hiệu suất và phong cách sống.
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <h5>CHÍNH SÁCH BÁN HÀNG</h5>
+                    <ul class="nav-item ps-3">
+                        <li>Bảo mật và thanh toán</li>
+                        <li>Vận chuyển và giao hàng</li>
+                        <li>Hỗ trợ khách hàng</li>
+                        <li>Bảo trì và sửa chữa sau khi hết bảo hành</li>
+                        <li>Đổi/trả hàng</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>THEO DÕI TÔI</h5>
+                    <ul class="nav-item ps-1">
+                        <li class="nav-link">
+                            <a href="https://www.facebook.com/?locale=vi_VN" class="nav-link">
+                                <i class="bi bi-facebook"></i> Phan Nguyễn Tấn Đạt
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-3">
+                    <h4>Người đại diện</h4>
+                    <p>Phan Nguyễn Tấn Đạt</p>
+                </div>
+                <div class="col-md-9">
+                    <h4>Nhận tin khuyến mãi</h4>
+                    <form class="d-flex me-5 w-100">
+                        <input class="form-control rounded-end-0" type="search" placeholder="Search"
+                            aria-label="Search">
+                        <button class="btn btn-light rounded-start-0" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="cod-md-6">
+                    Bản quyền thuộc F.studio
+                    <i class="fa-regular fa-copyright"></i>
+                </div>
+
+                <div class="cod-md-6">
+                    Trang chủ
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/tooltips.js"></script>
+    <script src="../js/themVaoGioHang.js"></script>
+</body>
+
+</html>

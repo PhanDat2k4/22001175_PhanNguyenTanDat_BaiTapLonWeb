@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAPTOPWORLD</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="../js/checkthongtin.js"></script>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="../css/thanhtoan.css">
+    <style>
+        .btn-outline-light {
+            @media (max-width: 992px) {
+                display: none;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container bg-light">
+        <header>
+            <div id="successMessage" style="display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4);">
+                <div style="background-color:  #4CAF50; margin: 15% auto; padding: 20px;  width: 50%; text-align: center; border-radius: 10px; font-weight: bolder;" class="text-white">
+                    Thanh toán thành công!
+                </div>
+            </div>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <a href="../index.html" class="nav-link me-4">
+                        <h2 class="fw-bold">LAPTOPWORLD</h2>
+                    </a>
+                    <button class="btn btn-outline-light me-4" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <form class="d-flex me-4 w-50">
+                            <input class="form-control rounded-end-0" type="search" placeholder="Search"
+                                aria-label="Search">
+                            <button class="btn btn-light rounded-start-0" type="submit">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </form>
+                        <ul class="navbar-nav">
+                            <li class="nav-item me-5">
+                                <button type="button" class="button-news">
+                                    <a href="https://www.cnet.com/2/" class="nav-link fw-bold text-white">Tin Tức</a>
+                                </button>
+                            </li>
+                            <li class="nav-item me-5">
+                                <button type="button" class="button-cart">
+                                    <a href="giohang.html" class="nav-link fw-bold text-white"> Giỏ Hàng <i
+                                            class="bi bi-cart3"></i></a>
+                                </button>
+                            </li>
+                            <li class="nav-item">
+                                <button type="button" class="button-login">
+                                    <a href="#" class="nav-link fw-bold" data-bs-toggle="modal"
+                                        data-bs-target="#loginModal">
+                                        Đăng Nhập <i class="bi bi-box-arrow-in-right"></i></a>
+                                </button>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Login Modal -->
+                <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="loginModalLabel">Đăng nhập</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Login Form -->
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="loginUsername" class="form-label">Tên đăng nhập</label>
+                                        <input type="text" class="form-control" id="loginUsername" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="loginPassword" class="form-label">Mật khẩu</label>
+                                        <input type="password" class="form-control" id="loginPassword" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <a href="#">Quên mật khẩu?</a>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Đăng nhập</button>
+                                </form>
+                                <hr>
+                                <div class="mb-3">
+                                    <button type="button" class="btn btn-primary" style="width: 49%;">Đăng nhập bằng
+                                        Facebook</button>
+                                    <button type="button" class="btn btn-danger" style="width: 49%;">Đăng nhập bằng
+                                        Google</button>
+                                </div>
+                                <p>Nếu bạn chưa có tài khoản, hãy <a href="#" data-bs-dismiss="modal"
+                                        data-bs-toggle="modal" data-bs-target="#registerModal">đăng ký</a>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Register Modal -->
+                <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="registerModalLabel">Đăng ký</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Register Form -->
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="registerUsername" class="form-label">Họ tên</label>
+                                        <input type="text" class="form-control" id="registerFirstName" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="registerMail" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="registerMail" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="registerPhone" class="form-label">Số điện thoại</label>
+                                        <input type="tel" class="form-control" id="registerPhone" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="registerUsername" class="form-label">Tên đăng nhập</label>
+                                        <input type="text" class="form-control" id="registerUsername" required>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="registerPassword" class="form-label">Mật khẩu</label>
+                                        <input type="password" class="form-control" id="registerPassword" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="registerrePassword" class="form-label">Xác nhận mật khẩu</label>
+                                        <input type="password" class="form-control" id="registerrePassword" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="agreeCheck"
+                                                id="agreeCheck" value="option1" required>
+                                            <label class="form-check-label" for="exampleRadios1">
+                                                Tôi đã đọc và chấp nhận Điều khoản và Chính sách bảo mật
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Đăng ký</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div class="offcanvas offcanvas-start w-25" data-bs-scroll="true" tabindex="-1"
+                id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                <div class="offcanvas-header">
+                    <h3 class="offcanvas-title fw-bold" id="offcanvasWithBothOptionsLabel">
+                        <a href="../index.html" class="nav-link">LAPTOPWORLD</a>
+                    </h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <form class="d-flex me-5 mb-2 w-auto">
+                        <input class="form-control rounded-end-0" type="search" placeholder="Search"
+                            aria-label="Search">
+                        <button class="btn btn-light rounded-start-0" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </form>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <button type="button" class="button-news">
+                                <a href="https://www.cnet.com/2/" class="nav-link fw-bold text-white">Tin Tức</a>
+                            </button>
+                        </li>
+                        <li class="nav-item mt-2">
+                            <button type="button" class="button-cart">
+                                <a href="giohang.html" class="nav-link fw-bold text-white"> Giỏ Hàng <i
+                                        class="bi bi-cart3"></i></a>
+                            </button>
+                        </li>
+                        <li class="nav-item mt-2">
+                            <button type="button" class="button-login">
+                                <a href="#" class="nav-link fw-bold" data-bs-toggle="modal"
+                                    data-bs-target="#loginModal">
+                                    Đăng Nhập <i class="bi bi-box-arrow-in-right"></i></a>
+                            </button>
+
+                        </li>
+                    </ul>
+                    <div class="row justify-content-center mt-5">
+                        <div class="col-2">
+                            <a href="https://www.facebook.com/atnuanh.76" class="text-primary" data-bs-toggle="tooltip"
+                                data-bs-placement="top" title="Follow on Facebook">
+                                <i class="bi bi-facebook fs-4"></i>
+                            </a>
+                        </div>
+                        <div class="col-2">
+                            <a href="https://youtube.com/@atnuanh_76" class="text-danger" data-bs-toggle="tooltip"
+                                data-bs-placement="top" title="Subscribe on YouTube">
+                                <i class="bi bi-youtube fs-4"></i>
+                            </a>
+                        </div>
+                        <div class="col-2">
+                            <a href="mailto:1tuananhtran1@gmail.com" class="text-danger" data-bs-toggle="tooltip"
+                                data-bs-placement="top" title="Send an Email">
+                                <i class="bi bi-envelope-at fs-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <p class="text-danger"><i class="bi bi-c-circle"></i> Copyright belongs to group 14</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+        <!-- GioHang.html -->
+        <section class="mt-5">
+            <div id="cartItems" class="row">
+                <!-- Nơi hiển thị sản phẩm trong giỏ hàng -->
+            </div>
+            <div class="row mb-3">
+                <div class="col-8 text-end">
+                    <h5 class="fw-bold"></h5>
+                </div>
+                <div class="col-4">
+                    <h5 class="fw-bold" id="tien"></h5>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-12 text-center">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#paymentModal" id="btnThanhToan">
+                        Thanh Toán
+                    </button>
+                </div>
+            </div>
+            <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="td">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-item" id="login-tab" data-bs-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="false" style="text-decoration: none; font-size:xx-large; color: gray;">QUÉT MÃ QR</a>
+                            </li>
+                            <li style="text-decoration: none; font-size:xx-large; color: gray;">&nbsp;/&nbsp;</li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-item active" id="register-tab" data-bs-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="true" style="text-decoration: none; font-size:xx-large; color: gray;">THANH TOÁN BẰNG SỐ THẺ</a>
+                            </li>
+                            <li>
+                                <button type="button" class="btn-close btn-close-right" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </li>
+                        </ul>
+                      </div>
+                        <div class="tab-content" id="myTabContent">
+                          <div class="tab-pane fade" id="login" role="tabpanel" aria-labelledby="login-tab">
+                                <div class="modal-body">
+                                  <div class="anh">
+                                    <img src="../img/QR.jpg" alt="" class="img"> <br>
+                                    <button type="button" class="btn btn-danger" id="btnthanhtoan">Hoàn tất!</button>
+                                  </div>
+                                </div>
+                            </div>
+                          <div class="tab-pane fade show active" id="register" role="tabpanel" aria-labelledby="register-tab">
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label for="username" class="form-label">Ngân hàng</label>
+                                    <select name="" id="NH" class="form-select">
+                                        <option value="">Chọn ngân hàng</option>
+                                        <option value="Agribank">Ngân hàng Nông nghiệp và Phát triển Nông thôn VN-Agribank</option>
+                                        <option value="BIDV">Ngân hàng Đầu tư và Phát triển Việt Nam-BIDV</option>
+                                        <option value="ViettinBank">Ngân hàng Công Thương Việt Nam-ViettinBank</option>
+                                        <option value="VietcomBank">Ngân hàng Ngoại thương Việt Nam-VietcomBank</option>
+                                        <option value="TechcomBank">Ngân hàng Kỹ Thương Việt Nam-TechcomBank</option>
+                                        <option value="MB">Ngân hàng Quân đội-MB</option>
+                                    </select>
+                                    <span id="selectErr"></span>
+                                </div>
+    
+                              <div class="mb-3">
+                                <label for="username" class="form-label">Số Thẻ</label>
+                                <input type="text" name="txtTK" id="txtTK" class="form-control" placeholder="Số Thẻ">
+                                <span id="errTK" class="err"></span>
+                              </div>
+                              <div class="mb-3">
+                                <label for="username" class="form-label">Thành tiền:</label>
+                                <div id="thanhTien"></div>
+                              </div>
+                              <div class="anh">
+                                <button type="button" class="btn btn-danger" id="btntratien">Hoàn tất!</button>
+                              </div>
+                              
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <footer class="bg-dark text-white p-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h5>VĂN PHÒNG GIAO DỊCH</h5>
+                        <ul class="list-menu ps-3">
+                            <li class="li_menu">
+
+                                <address>
+                                    Địa chỉ: 12 Nguyễn Văn Bảo, Phường 4, Quận Gò Vấp, TP.Hồ Chí Minh
+                                </address>
+
+                            </li>
+                            <li class="li_menu">
+                                Thời gian làm việc: <br>
+                                - Từ thứ 2 đến chủ nhật: 0h-24h
+                                <br>
+                                không có ngày nghỉ
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h5>VỀ CHÚNG TÔI</h5>
+
+                        <p style="text-align: justify;">Chào mừng bạn đến với LaptopWorld - Nơi bạn tìm thấy sự kết hợp
+                            hoàn
+                            hảo giữa công nghệ và
+                            phong cách!</p>
+                        <p style="text-align: justify;">Sứ mệnh của chúng tôi là mang đến cho bạn những sản phẩm và
+                            dịch vụ tốt nhất, đáp ứng
+                            mọi nhu cầu về công nghệ thông tin của bạn và nâng cao hiệu suất và phong cách sống.
+                        </p>
+                    </div>
+                    <div class="col-md-3">
+                        <h5>CHÍNH SÁCH BÁN HÀNG</h5>
+                        <ul class="nav-item ps-3">
+                            <li>Bảo mật và thanh toán</li>
+                            <li>Vận chuyển và giao hàng</li>
+                            <li>Hỗ trợ khách hàng</li>
+                            <li>Bảo trì và sửa chữa sau khi hết bảo hành</li>
+                            <li>Đổi/trả hàng</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h5>THEO DÕI TÔI</h5>
+                        <ul class="nav-item ps-1">
+                            <li class="nav-link">
+                                <a href="https://www.facebook.com/?locale=vi_VN" class="nav-link">
+                                    <i class="bi bi-facebook"></i> Phan Nguyễn Tấn Đạt
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-3">
+                        <h4>Người đại diện</h4>
+                        <p>Phan Nguyễn Tấn Đạt</p>
+                    </div>
+                    <div class="col-md-9">
+                        <h4>Nhận tin khuyến mãi</h4>
+                        <form class="d-flex me-5 w-100">
+                            <input class="form-control rounded-end-0" type="search" placeholder="Search"
+                                aria-label="Search">
+                            <button class="btn btn-light rounded-start-0" type="submit">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="cod-md-6">
+                        Bản quyền thuộc F.studio
+                        <i class="fa-regular fa-copyright"></i>
+                    </div>
+
+                    <div class="cod-md-6">
+                        Trang chủ
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="../js/tooltips.js"></script>
+       <script src="../js/gioHang.js"></script>
+       <script src="../js/thanhtoan.js"></script>
+</body>
+
+</html>
